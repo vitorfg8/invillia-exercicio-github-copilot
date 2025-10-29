@@ -74,6 +74,30 @@ activities = {
         "schedule": "Fridays, 4:00 PM - 5:30 PM",
         "max_participants": 12,
         "participants": ["oliver@mergington.edu", "charlotte@mergington.edu"]
+    },
+    "Volleyball Team": {
+        "description": "Competitive and recreational volleyball training and matches",
+        "schedule": "Mondays and Wednesdays, 4:30 PM - 6:00 PM",
+        "max_participants": 18,
+        "participants": ["nathan@mergington.edu", "grace@mergington.edu"]
+    },
+    "Swimming Club": {
+        "description": "Technique improvement, lap training and swim meets",
+        "schedule": "Tuesdays and Thursdays, 5:00 PM - 6:30 PM",
+        "max_participants": 25,
+        "participants": ["harry@mergington.edu", "zoe@mergington.edu"]
+    },
+    "Photography Club": {
+        "description": "Learn photography techniques, editing and exhibit work",
+        "schedule": "Wednesdays, 5:00 PM - 6:30 PM",
+        "max_participants": 16,
+        "participants": ["mia@mergington.edu", "henry@mergington.edu"]
+    },
+    "Music Ensemble": {
+        "description": "Group rehearsals and performances for instrumentalists and singers",
+        "schedule": "Thursdays, 3:30 PM - 5:00 PM",
+        "max_participants": 24,
+        "participants": ["lily@mergington.edu", "jack@mergington.edu"]
     }
 }
 
@@ -101,6 +125,8 @@ def signup_for_activity(activity_name: str, email: str):
     # Validar se o aluno já está inscrito
     if email in activity["participants"]:
         raise HTTPException(status_code=400, detail="Already signed up")
+    
+
 
     # Add student
     activity["participants"].append(email)
